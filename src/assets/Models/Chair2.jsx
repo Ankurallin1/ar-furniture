@@ -3,6 +3,7 @@
 import { useRef, useMemo } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useCharacterAnimations } from "../../contexts/ModelControl";
+import ShadowReceiver from '../../component/ShadowReceiver'
 
 const Model = (props) => {
   const { nodes, materials } = useGLTF('/model/chair2-transformed.glb')
@@ -12,9 +13,9 @@ const Model = (props) => {
 
 
   const modelElement = useMemo(() => {
-    let scl = [0.02, 0.02, 0.02]
+    let scl = [0.012 , 0.012, 0.012]
     let rots = [0, 0, 0]
-    let pos = [0, -1.5, 0]
+    let pos = [0, -1.3, 0]
     if (props.chair2) {
       rots = props.rotation;
       scl = props.scale
@@ -24,14 +25,24 @@ const Model = (props) => {
       <group ref={group} {...props} rotation={rots} scale={scl} position={pos} dispose={null}>
         <mesh geometry={nodes.OfficeChair_OfficeChairMetal_0.geometry} material={materials.OfficeChairMetal} rotation={[-Math.PI / 2, 0, 0]} scale={100} 
           material-color={currentColor}
+          castShadow
+
         />
       <mesh geometry={nodes.OfficeChair_OfficeChairPlastic_0.geometry} material={materials.OfficeChairPlastic} rotation={[-Math.PI / 2, 0, 0]} scale={100} 
         material-color={currentColor}
+        castShadow
+
       />
       <mesh geometry={nodes.OfficeChair_OfficeChairCloth_0.geometry} material={materials.OfficeChairCloth} rotation={[-Math.PI / 2, 0, 0]} scale={100}
-      material-color={currentColor} />
+      material-color={currentColor}
+      castShadow
+      />
       <mesh geometry={nodes.OfficeChair_OfficeChairLeather_0.geometry} material={materials.OfficeChairLeather} rotation={[-Math.PI / 2, 0, 0]} scale={100}
-      material-color={currentColor} />
+      material-color={currentColor} 
+      castShadow
+
+      />
+     <ShadowReceiver/>
       </group>
     )
   }, [nodes, materials, currentColor, props.chair2, props.rotation, props.scale, props.position])

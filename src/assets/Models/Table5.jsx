@@ -2,6 +2,7 @@
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useCharacterAnimations } from "../../contexts/ModelControl";
+import ShadowReceiver from '../../component/ShadowReceiver'
 
 export default function Model(props) {
   const group = useRef();
@@ -20,19 +21,21 @@ export default function Model(props) {
     <group ref={group} {...props} rotation={rots} scale={scl} position={pos} dispose={null}>
 
       <group position={[0.462, -0.974, 0.901]} scale={464.371}>
-        <mesh geometry={nodes.Cube001_1.geometry} material={materials['Material.002']}
+        <mesh castShadow geometry={nodes.Cube001_1.geometry} material={materials['Material.002']}
          />
       </group>
-      <mesh geometry={nodes.Cube070.geometry} material={materials.Main} position={[0.462, -0.974, 0.901]} scale={464.371}
+      <mesh castShadow geometry={nodes.Cube070.geometry} material={materials.Main} position={[0.462, -0.974, 0.901]} scale={464.371}
         material-color={currentColor}
        />
-      <mesh geometry={nodes.Cube131.geometry} material={materials['vase-041']} position={[0.462, -0.974, 0.901]} scale={464.371} 
+      <mesh castShadow geometry={nodes.Cube131.geometry} material={materials['vase-041']} position={[0.462, -0.974, 0.901]} scale={464.371} 
         material-color={currentColor}
 
       />
-      <mesh geometry={nodes.Cube135.geometry} material={materials.Material_34} position={[0.462, -0.974, 0.901]} scale={464.371} />
-      <mesh geometry={nodes.Cube136.geometry} material={materials.Material_60} position={[0.462, -0.974, 0.901]} scale={464.371}
+      <mesh castShadow geometry={nodes.Cube135.geometry} material={materials.Material_34} position={[0.462, -0.974, 0.901]} scale={464.371} />
+      <mesh castShadow geometry={nodes.Cube136.geometry} material={materials.Material_60} position={[0.462, -0.974, 0.901]} scale={464.371}
        />
+            <ShadowReceiver/>
+
     </group>
   )
 }

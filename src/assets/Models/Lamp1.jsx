@@ -6,6 +6,7 @@ Command: npx gltfjsx@6.2.16 lamp1.glb
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useCharacterAnimations } from "../../contexts/ModelControl";
+import ShadowReceiver from '../../component/ShadowReceiver'
 
 export default function Model(props) {
   const group=useRef();
@@ -22,10 +23,12 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/model/lamp1-transformed.glb')
   return (
     <group ref={group} {...props} position={pos} rotation={rots} scale={scl} dispose={null}>
-      <mesh geometry={nodes.light.geometry} material={materials.Lamp} scale={5} />
-      <mesh geometry={nodes.Table_Lamp_bottom.geometry} material={materials.Porcelain} scale={5} material-color={currentColor} />
-      <mesh geometry={nodes.Table_Lamp_fabric.geometry} material={materials.Fabric} scale={5} />
-      <mesh geometry={nodes.Table_Lamp_fabric_rim.geometry} material={materials['Old White Metal']} scale={5} />
+      <mesh castShadow geometry={nodes.light.geometry} material={materials.Lamp} scale={5} />
+      <mesh castShadow geometry={nodes.Table_Lamp_bottom.geometry} material={materials.Porcelain} scale={5} material-color={currentColor} />
+      <mesh castShadow geometry={nodes.Table_Lamp_fabric.geometry} material={materials.Fabric} scale={5} />
+      <mesh castShadow geometry={nodes.Table_Lamp_fabric_rim.geometry} material={materials['Old White Metal']} scale={5} />
+      <ShadowReceiver/>
+
     </group>
   )
 }

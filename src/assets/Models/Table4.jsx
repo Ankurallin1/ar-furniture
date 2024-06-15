@@ -2,6 +2,7 @@
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useCharacterAnimations } from "../../contexts/ModelControl";
+import ShadowReceiver from '../../component/ShadowReceiver'
 
 export default function Model(props) {
   const group = useRef();
@@ -19,10 +20,12 @@ export default function Model(props) {
   return (
     <group ref={group} {...props} rotation={rots} scale={scl} position={pos} dispose={null}>
 
-      <mesh geometry={nodes.defaultMaterial.geometry} material={materials.Folding_Table} scale={0.973} 
+      <mesh castShadow geometry={nodes.defaultMaterial.geometry} material={materials.Folding_Table} scale={0.973} 
         material-color={currentColor}
 
       />
+           <ShadowReceiver position={[0,-0.4,0]}/>
+
     </group>
   )
 }
