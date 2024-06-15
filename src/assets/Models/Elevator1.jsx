@@ -71,7 +71,8 @@ export default function Model(props) {
         <mesh castShadow name="Object_35" geometry={nodes.Object_35.geometry} material={materials.Emission} position={[0.173, 1.463, -1.335]} rotation={[0, 0, -Math.PI / 2]} scale={1.192} />
         <mesh castShadow name="polySurface2427001" geometry={nodes.polySurface2427001.geometry} material={materials['lambert1.001']} position={[-1.192, -0.2, -0.436]} rotation={[1.571, -0.004, -3.064]} scale={[0.409, 0.418, 0.455]} />
       </group>
-      <ShadowReceiver />
+      {!props.elevator1 && <ShadowReceiver/>}
+
     </group>
   )
 }

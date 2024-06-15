@@ -27,8 +27,7 @@ export default function Model(props) {
             material-color={currentColor}
 
       />
-           <ShadowReceiver position={[0,-0.5,0]}/>
-
+{!props.sofa5 && <ShadowReceiver position={[0,-0.5,0]}/>}
     </group>
   )
 }

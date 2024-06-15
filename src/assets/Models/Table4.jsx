@@ -24,8 +24,7 @@ export default function Model(props) {
         material-color={currentColor}
 
       />
-           <ShadowReceiver position={[0,-0.4,0]}/>
-
+{!props.table4 && <ShadowReceiver position={[0, -0.4,0]}/>}
     </group>
   )
 }

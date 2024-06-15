@@ -34,8 +34,7 @@ export default function Model(props) {
       <mesh castShadow geometry={nodes.Cube135.geometry} material={materials.Material_34} position={[0.462, -0.974, 0.901]} scale={464.371} />
       <mesh castShadow geometry={nodes.Cube136.geometry} material={materials.Material_60} position={[0.462, -0.974, 0.901]} scale={464.371}
        />
-            <ShadowReceiver/>
-
+{!props.table5 && <ShadowReceiver position={[0, 0, 0]} />}
     </group>
   )
 }

@@ -41,7 +41,7 @@ export const CharacterAnimationsProvider = (props) => {
         "Lamp 1": "lamp1",
         "Lamp 2": "lamp2",
         "Kitchen 1": "kitchen1",
-        "Elevato 1": "elevator1",
+        "Elevator 1": "elevator1",
       },
       onChange: (value) => {
         setCurrentModelName(value);

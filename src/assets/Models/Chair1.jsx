@@ -44,8 +44,7 @@ const Model = (props) => {
 
 
         />
-     <ShadowReceiver/>
-        
+{!props.chair && <ShadowReceiver position={[0,0,0]}/>}        
       </group>
     );
   }, [nodes, materials, currentColor, props.chair, props.rotation, props.scale, props.position]);

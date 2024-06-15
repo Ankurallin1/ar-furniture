@@ -27,8 +27,7 @@ export default function Model(props) {
       <mesh castShadow geometry={nodes.Object_3.geometry} material={materials['wood.001']} rotation={[-Math.PI / 2, 0, 0]} 
         material-color={currentColor}
       />
-           <ShadowReceiver position={[0,0,0]}/>
-
+{!props.table3 && <ShadowReceiver position={[0,0,0]}/>}
     </group>
   )
 }

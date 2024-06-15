@@ -25,8 +25,7 @@ export default function Model(props) {
       <mesh castShadow geometry={nodes.Object_4001.geometry} material={materials['carpet.001']} position={[-18.403, -0.832, 13.298]} rotation={[-Math.PI, 0, -0.009]} scale={[-6.257, 6.257, 6.257]} />
       <mesh castShadow geometry={nodes['1_low_Giotto-C_0'].geometry} material={materials['Wood.001']} position={[-12.987, -0.26, 11.1]} rotation={[-Math.PI / 2, 0, 0.035]} scale={11.919} />
       <mesh castShadow geometry={nodes.Vase_6_cyan001_Ceramic_dark_cyan002_0.geometry} material={materials['Ceramic_dark_cyan.004']} position={[-11.977, 3.971, 11.499]} rotation={[-Math.PI / 2, 0, 0.997]} scale={11.919} />
-      <ShadowReceiver/>
-
+{!props.sofa6 && <ShadowReceiver position={[0, 0, 0]} />}
     </group>
   )
 }

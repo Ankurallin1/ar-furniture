@@ -32,8 +32,7 @@ export default function Model(props) {
       <mesh castShadow geometry={nodes.pasted__sofabody2_pasted__sofabody2Shape_bakedmtl2_0.geometry} material={materials.pasted__sofabody2Shape_bakedmtl2}
         material-color={currentColor}
       />
-      <ShadowReceiver />
-
+{!props.sofa4 && <ShadowReceiver position={[0, 0, 0]} />}
     </group>
   )
 }

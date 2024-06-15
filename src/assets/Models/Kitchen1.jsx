@@ -25,7 +25,7 @@ export default function Model(props) {
     <mesh castShadow geometry={nodes.Object_130.geometry} material={materials.woodenFurniture_mat} position={[1.975, 1.079, -2.228]} scale={[1, 1, 0.75]} />
     <mesh castShadow geometry={nodes.Object_186.geometry} material={materials.transparencies_mat} position={[1.317, 3.18, -2.41]} rotation={[-0.049, 0.087, -1.479]} scale={[0.12, 0.148, 0.077]} />
     <instancedMesh args={[nodes.Object_11.geometry, materials.glass_mat, 5]} instanceMatrix={nodes.Object_11.instanceMatrix} />
-    <ShadowReceiver/>
+    {!props.kitchen1 && <ShadowReceiver/>}
 
     </group>
   )

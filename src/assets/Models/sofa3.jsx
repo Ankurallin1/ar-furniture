@@ -24,8 +24,7 @@ export default function Model(props) {
       <mesh castShadow geometry={nodes.pillow1_sofa_0.geometry} material={materials.sofa} position={[0.357, 0.627, -0.094]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]} scale={0.9} 
         material-color={currentColor}
       />
-           <ShadowReceiver/>
-
+{!props.sofa3 && <ShadowReceiver position={[0,0,0]}/>}
     </group>
   )
 }

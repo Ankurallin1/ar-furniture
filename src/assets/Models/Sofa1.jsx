@@ -31,8 +31,7 @@ export default function Model(props) {
         material-color={currentColor}
         castShadow
       />
-      <ShadowReceiver />
-
+      {!props.sofa1 && <ShadowReceiver position={[0, 0, 0]} />}
     </group>
   )
 }

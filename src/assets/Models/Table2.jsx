@@ -21,8 +21,7 @@ export default function Model(props) {
       <mesh castShadow geometry={nodes.Coffee_table.geometry} material={materials.Материал} rotation={[0, 0, 0]} 
         material-color={currentColor}
       />
-           <ShadowReceiver position={[0,0,0]}/>
-
+{!props.table2 && <ShadowReceiver position={[0,0,0]}/>}
     </group>
   )
 }

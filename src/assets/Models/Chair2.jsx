@@ -42,7 +42,7 @@ const Model = (props) => {
       castShadow
 
       />
-     <ShadowReceiver/>
+    {!props.chair2 && <ShadowReceiver/>}
       </group>
     )
   }, [nodes, materials, currentColor, props.chair2, props.rotation, props.scale, props.position])

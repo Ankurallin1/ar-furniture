@@ -38,8 +38,7 @@ export default function Model(props) {
         castShadow
 
        />
-        <ShadowReceiver position={[0,0,0]}/>
-
+{!props.table1 && <ShadowReceiver position={[0,0,0]}/>}
     </group>
   )
 }

@@ -1,5 +1,5 @@
 
-import  { useRef } from 'react'
+import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useCharacterAnimations } from "../../contexts/ModelControl";
 import ShadowReceiver from '../../component/ShadowReceiver'
@@ -29,8 +29,7 @@ export default function Model(props) {
       <mesh castShadow geometry={nodes.defaultMaterial_3.geometry} material={materials.lambert3} position={[0, 24.958, 0]}
         material-color={currentColor}
       />
-      <ShadowReceiver position={[0,2,0]}/>
-
+      {!props.lamp2 && <ShadowReceiver position={[0, 2, 0]} />}
     </group>
   )
 }
